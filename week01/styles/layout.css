@@ -1,0 +1,171 @@
+/* ============================================================
+   layout.css  –  WDD 131 Basic Layout  (Emmanuel)
+   Grid on body  |  Flex on nav
+   ============================================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --clr-dark:    #3a3a3a;
+  --clr-darker:  #1e1e1e;
+  --clr-nav:     #111111;
+  --clr-main-bg: #d6d6d6;
+  --clr-aside-bg:#ffffff;
+  --clr-accent:  #c9a84c;        /* warm gold accent */
+  --clr-text:    #1e1e1e;
+  --clr-light:   #f5f0e8;
+
+  --ff-heading:  'Playfair Display', Georgia, serif;
+  --ff-body:     'Source Serif 4', Georgia, serif;
+}
+
+/* ---------- Reset / Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  color: var(--clr-text);
+  line-height: 1.7;
+
+  /* ── CSS GRID on <body> ── */
+  display: grid;
+  grid-template-columns: 3fr 1fr;   /* main ≈ 75 %, aside ≈ 25 % */
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "nav     nav"
+    "main    aside"
+    "footer  footer";
+  min-height: 100vh;
+}
+
+/* ---------- Header ---------- */
+header {
+  grid-area: header;
+  background-color: var(--clr-dark);
+  color: #fff;
+  padding: 1.5rem 2rem 1rem;
+}
+
+.site-name {
+  font-family: var(--ff-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  color: var(--clr-accent);
+}
+
+/* ---------- Navigation (inside header) ---------- */
+nav {
+  grid-area: nav;
+  background-color: var(--clr-nav);
+
+  /* ── CSS FLEX on <nav> ── */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  flex: 1;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  color: #fff;
+  font-family: var(--ff-body);
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--clr-accent);
+  color: var(--clr-darker);
+  outline: none;
+}
+
+/* ---------- Main Content ---------- */
+main {
+  grid-area: main;
+  background-color: var(--clr-main-bg);
+  padding: 2rem 2.5rem;
+}
+
+main > p:first-child {
+  font-family: var(--ff-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--clr-darker);
+}
+
+main img {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 1.5rem 0;
+  border: 3px solid var(--clr-accent);
+}
+
+main p + p {
+  margin-top: 0.75rem;
+}
+
+/* ---------- Aside ---------- */
+aside {
+  grid-area: aside;
+  background-color: var(--clr-aside-bg);
+  padding: 2rem 1.5rem;
+  border-left: 4px solid var(--clr-accent);
+}
+
+aside > p:first-child {
+  font-family: var(--ff-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--clr-darker);
+}
+
+aside img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border: 2px solid var(--clr-dark);
+}
+
+aside p + p {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  grid-area: footer;
+  background-color: var(--clr-dark);
+  color: #ccc;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer p:first-child {
+  font-family: var(--ff-heading);
+  font-size: 1.1rem;
+  color: var(--clr-accent);
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
