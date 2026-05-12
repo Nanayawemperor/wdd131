@@ -1,0 +1,21 @@
+/* Large Screen View */
+
+@media screen and (min-width: 768px) {
+
+  #menu-button {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
