@@ -1,0 +1,225 @@
+/* ===========================
+   WDD 131 – base.css
+   =========================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f0f0f0;
+}
+
+/* --- Header (title bar only) --- */
+header {
+  background-color: #2c4a6e;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+#course-title {
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+/* --- Nav bar (separate from header) --- */
+nav {
+  background-color: #1e3550;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.6rem 2rem;
+}
+
+nav a {
+  color: #d0dff0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #ffffff22;
+  color: #ffffff;
+  outline: none;
+}
+
+/* --- Main --- */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+}
+
+main h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1e3550;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Two-column card grid --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Cards --- */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #c8d4e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card h2 {
+  background-color: #2c4a6e;
+  color: #ffffff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  letter-spacing: 0.03em;
+}
+
+.card-body {
+  padding: 1rem 1.25rem;
+}
+
+/* --- About Me card internals --- */
+.about-top {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.about-top p {
+  flex: 1;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.about-top img {
+  width: 120px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0.75rem 0;
+}
+
+.card-body h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1e3550;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Flag section --- */
+.flag-section {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.flag-section figure {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.flag-section img {
+  width: 140px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: block;
+}
+
+.flag-section figcaption {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #666;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+.flag-section p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- Resource list card --- */
+.resource-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.resource-list li {
+  margin-bottom: 0.6rem;
+}
+
+.resource-list a {
+  color: #1a5c9e;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+  color: #0d3d6e;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #1e3550;
+  color: #b8cde0;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.1rem 0;
+}
+
+#lastModified {
+  color: #f0d060;
+  font-size: 0.82rem;
+}
