@@ -1,0 +1,180 @@
+/* ===========================
+   WDD 131 – place.css
+   Ghana color scheme: red, gold, green, black (flag colors)
+   =========================== */
+
+/* --- CSS Variables --- */
+:root {
+  --color-primary: #006b3f;    /* Ghana green */
+  --color-accent: #fcd116;     /* Ghana gold */
+  --color-danger: #ce1126;     /* Ghana red */
+  --color-dark: #1a1a1a;       /* Near-black (star) */
+  --color-text: #1e1e1e;
+  --color-text-muted: #555;
+  --color-bg: #f5f5f2;
+  --color-surface: #ffffff;
+  --color-border: #d4d0c4;
+  --font-heading: 'EB Garamond', serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --radius: 6px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- Page wrapper: narrow mobile-first, centered --- */
+.page-wrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: var(--color-surface);
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+  background-color: var(--color-danger);
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 5px solid var(--color-primary);
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+}
+
+/* --- Hero image --- */
+.hero {
+  display: block;
+  width: 100%;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* --- Shared section styles --- */
+.data-section,
+.weather-section {
+  padding: 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-section h2,
+.weather-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+/* --- Data list (dl > div > dt + dd) --- */
+.data-list {
+  display: grid;
+  row-gap: 0.35rem;
+}
+
+.data-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.data-row dt {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.data-row dd {
+  color: var(--color-text);
+  text-align: left;
+}
+
+/* --- Weather heading: pseudo-element icon for wider screens --- */
+.weather-heading::after {
+  content: ' ⛅';
+  font-size: 1.4rem;
+}
+
+/* --- Weather SVG icon (mobile only) --- */
+.weather-icon-mobile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.weather-icon-mobile img {
+  width: 80px;
+  height: 80px;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--color-danger);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+footer p {
+  margin: 0.15rem 0;
+}
+
+#lastModified {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+/* ===========================
+   Media Query — Wider screens
+   =========================== */
+@media (min-width: 600px) {
+  .page-wrapper {
+    max-width: 680px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Hide SVG icon on wider view — pseudo-element handles it */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  .data-row {
+    grid-template-columns: 160px 1fr;
+  }
+
+  .data-row dt {
+    text-align: right;
+  }
+}
