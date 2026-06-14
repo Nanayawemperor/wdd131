@@ -1,0 +1,17 @@
+[
+{
+"name": "AA Battery",
+"type": "Microphone",
+"price": 15
+},
+{
+"name": "UPS Battery",
+"type": "UPS",
+"price": 250
+},
+{
+"name": "Car Battery",
+"type": "Vehicle",
+"price": 800
+}
+]

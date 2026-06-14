@@ -1,0 +1,219 @@
+/* ===== GOOGLE FONT STYLE (optional if added in HTML) ===== */
+/* Montserrat headings, Roboto body */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    --blue: #003366;
+    --gold: #FFD700;
+    --gray: #F5F5F5;
+    --dark: #222;
+    --white: #fff;
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--gray);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background: var(--white);
+    color: var(--dark);
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* ===== NAVIGATION (MOBILE) ===== */
+
+
+
+nav a:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+/* ===== HAMBURGER BUTTON ===== */
+/* ===== HAMBURGER BUTTON (MOBILE ONLY) ===== */
+#menuBtn {
+    display: block;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    font-size: 1.6rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5rem auto;
+}
+
+/* ===== NAV (HIDDEN BY DEFAULT) ===== */
+nav {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* When JS toggles class */
+nav.show {
+    display: flex;
+}
+
+nav a {
+    padding: 0.75rem;
+    text-decoration: none;
+    color: black;
+    background: rgba(0,0,0,0.1);
+    margin: 0.2rem 0;
+}
+
+/* Hover effect */
+#menuBtn:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* Focus accessibility */
+#menuBtn:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* ===== LOGO AREA ===== */
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* Logo image */
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Header title */
+.site-header h1 {
+    font-size: 1.3rem;
+    color: black;
+}
+
+/* ===== HERO ===== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 1rem;
+}
+
+h2 {
+    color: var(--blue);
+    margin-bottom: 1rem;
+}
+
+/* ===== CARDS (PRODUCTS + FEATURED) ===== */
+/* ===== PRODUCT CARD ===== */
+.card {
+    background: var(--white);
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-align: center;
+
+    font-size: 0.9rem;
+}
+
+/* ===== PRODUCTS GRID (MOBILE) ===== */
+#featured,
+#products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+/* ===== SELECT FILTER ===== */
+select {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 1rem 0;
+}
+
+/* ===== FORM ===== */
+form {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background: var(--blue);
+    color: var(--white);
+    padding: 0.7rem;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* ===== RESULT TEXT ===== */
+#result,
+#msg {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
